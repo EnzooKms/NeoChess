@@ -58,4 +58,12 @@ module.exports = {
   engine_views: "express-edge",
   /** Express can already use this engine */
   isAlreadyImplement: false,
+
+  /*************************************************************
+   *
+   * Language variable
+   *
+   *************************************************************/
+
+  default_language: "fr",
 };
