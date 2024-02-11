@@ -5,6 +5,7 @@
  *************************************************************/
 
 const express = require("express");
+globalThis.Console = require("./console.js");
 globalThis.app = express();
 
 /*************************************************************
@@ -40,5 +41,5 @@ https.createServer(options, app).listen(config.port, config.url, () => {
    *
    *************************************************************/
 
-  require("./console.js").load();
+  Console.load();
 });
