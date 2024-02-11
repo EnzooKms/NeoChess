@@ -37,3 +37,13 @@ const helmet = require("helmet");
 const compression = require("compression");
 app.use(helmet());
 app.use(compression());
+
+/*************************************************************
+ *
+ * Application Express Configuration
+ *
+ *************************************************************/
+
+const express = require("express");
+app.use(config.path_public_assets, express.static(config.dir_public_assets));
+app.use(express.urlencoded({ extended: true }));
