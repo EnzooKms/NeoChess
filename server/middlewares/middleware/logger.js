@@ -8,7 +8,10 @@
  *
  *************************************************************/
 
-module.exports = (req, res, next) => {
+const Middleware = require("../middleware.js");
+
+module.exports = new Middleware().middleware((req, res, next) => {
   console.log(true);
   next();
-};
+});
+
