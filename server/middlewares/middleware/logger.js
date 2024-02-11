@@ -11,7 +11,10 @@
 const Middleware = require("../middleware.js");
 
 module.exports = new Middleware().middleware((req, res, next) => {
-  console.log(true);
+  const logger = new Console.Event("Logger Middleware -- New connexion");
+  logger.insertLine(`ip`, req.ip);
+  logger.insertLine("url", req.originalUrl);
+  logger.insertLine("auth", `${!!req.session?.user}`);
+  logger.run();
   next();
 });
-
