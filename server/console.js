@@ -1,17 +1,21 @@
 require("colors");
-console.clear();
+function load() {
+  console.clear();
 
-console.log(
-  `/*
+  console.log(
+    `/*
 |-------------------------------------------------------------------------------------------|
 | ${config.name.yellow} -- ${
-    config.version.green
-  } // Server run at current url : ${
-    `http://${config.url}:${config.port}`.blue
-  }              |
+      config.version.green
+    } // Server run at current url : ${
+      `https://${config.url}:${config.port}`.blue
+    }              |
 | ${
-    "Author Enzoo_Kms".red
-  }                                                                          |
+      "Author Enzoo_Kms".red
+    }                                                                          |
 |-------------------------------------------------------------------------------------------|
 */`
-);
+  );
+}
+
+module.exports = { load };
