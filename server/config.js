@@ -46,4 +46,15 @@ module.exports = {
    *************************************************************/
 
   path_public_assets: "resources/assets",
+
+  /*************************************************************
+   *
+   * View engine
+   *
+   *************************************************************/
+
+  path_views: "client/views",
+  engine_views: "express-edge",
+  /** Express can already use this engine */
+  isAlreadyImplement: false,
 };
