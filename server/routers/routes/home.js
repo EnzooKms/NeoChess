@@ -1,16 +1,14 @@
 /*************************************************************
  *
- * app.get(get[0], get()[1])
+ * Home router with get http verb
  *
  *************************************************************/
 
-function get() {
-  return [
-    "/",
-    (req, res) => {
-      res.json({ status: "ok" });
-    },
-  ];
-}
+const Route = require("../route.js");
+const route = new Route();
+
+const get = route.route("/", (req, res) => {
+  res.json({ status: "ok" });
+});
 
 module.exports = { get };
