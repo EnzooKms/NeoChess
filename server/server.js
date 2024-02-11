@@ -22,7 +22,7 @@ globalThis.config = require("./config.js");
  *************************************************************/
 
 require("./middlewares/global.js");
-require("./routers/route.js");
+require("./routers/routes.js");
 
 app.listen(config.port, config.url, () => {
   /*************************************************************
