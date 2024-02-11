@@ -14,6 +14,7 @@ globalThis.app = express();
  *************************************************************/
 
 globalThis.config = require("./config.js");
+require("./configuration.js");
 
 /*************************************************************
  *
