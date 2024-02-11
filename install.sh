@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install node package
-npm i bcrypt colors cors dotenv express express-session express-edge multer sqlite3 socket.io
+npm i bcrypt colors cors dotenv express express-session express-edge helmet multer sqlite3 socket.io
 
 # clear console
 clear
