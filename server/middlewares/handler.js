@@ -39,7 +39,8 @@ class Middleware {
    *************************************************************/
   static run() {
     for (const middleware of Middleware.globalMiddleware) {
-      app.use(middleware);
+      const [path, handler] = middleware();
+      app.use(path, handler);
     }
   }
 }
