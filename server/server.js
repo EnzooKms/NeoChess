@@ -5,7 +5,7 @@
  *************************************************************/
 
 const express = require("express");
-const app = express();
+globalThis.app = express();
 
 /*************************************************************
  *
@@ -20,6 +20,9 @@ globalThis.config = require("./config.js");
  * Run App
  *
  *************************************************************/
+
+require("./middlewares/global.js");
+require("./routers/routes.js");
 
 app.listen(config.port, config.url, () => {
   /*************************************************************
