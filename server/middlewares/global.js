@@ -7,6 +7,7 @@ const Middleware = require("./handler.js");
  *************************************************************/
 
 Middleware.setMiddleware("logger");
+Middleware.setMiddleware("language");
 
 /*************************************************************
  *
