@@ -45,7 +45,8 @@ module.exports = {
    *
    *************************************************************/
 
-  path_public_assets: "resources/assets",
+  dir_public_assets: "client/public",
+  path_public_assets: "/resources/assets",
 
   /*************************************************************
    *
