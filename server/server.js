@@ -40,5 +40,5 @@ https.createServer(options, app).listen(config.port, config.url, () => {
    *
    *************************************************************/
 
-  require("./console.js");
+  require("./console.js").load();
 });
