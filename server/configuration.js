@@ -12,3 +12,17 @@ if (config.isAlreadyImplement) {
   app.use(engine);
   app.set("views", config.path_views);
 }
+
+/*************************************************************
+ *
+ * Application Cross Origin Resources shared (cors)
+ *
+ *************************************************************/
+
+const cors = require("cors");
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET"],
+  })
+);
