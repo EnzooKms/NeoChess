@@ -25,7 +25,15 @@ require("./configuration.js");
 require("./middlewares/global.js");
 require("./routers/routes.js");
 
-app.listen(config.port, config.url, () => {
+const https = require("https");
+const fs = require("fs");
+
+const options = {
+  key: fs.readFileSync("ssl/key.pem"),
+  cert: fs.readFileSync("ssl/cert.pem"),
+};
+
+https.createServer(options, app).listen(config.port, config.url, () => {
   /*************************************************************
    *
    * Clear console
