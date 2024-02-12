@@ -14,7 +14,7 @@ Middleware.setMiddleware("language");
  * Run all global Middleware
  *
  * -------------------------
- * Do not this code        |
+ * Do not delete this code        |
  * -------------------------
  *
  *************************************************************/
