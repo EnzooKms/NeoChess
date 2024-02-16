@@ -12,7 +12,7 @@
 - [dotenv](https://www.npmjs.com/package/dotenv)
 - [express](https://expressjs.com/fr/)
 - [express-session](https://www.npmjs.com/package/express-session)
-- [express-edge](https://docs.adonisjs.com/guides/views/introduction#edge-vs-pug)
+- [pugjs](https://pugjs.org/api/getting-started.html)
 - [multer](https://www.npmjs.com/package/multer)
 - [sqlite3](https://www.npmjs.com/package/sqlite3)
 - [socket.io](https://socket.io/)
