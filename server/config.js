@@ -18,9 +18,7 @@ module.exports = {
   url:
     process.env.URL ||
     (() => {
-      throw new Error(
-        "URL : missing environment variable \n Put localhost or ipv4"
-      );
+      throw new Error("URL : missing environment variable \n Put localhost or ipv4");
     })(),
 
   /*************************************************************
@@ -55,9 +53,9 @@ module.exports = {
    *************************************************************/
 
   path_views: "client/views",
-  engine_views: "express-edge",
+  engine_views: "pug",
   /** Express can already use this engine */
-  isAlreadyImplement: false,
+  isAlreadyImplement: true,
 
   /*************************************************************
    *
