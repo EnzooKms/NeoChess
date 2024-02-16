@@ -7,13 +7,15 @@ const Middleware = require("./handler.js");
  *************************************************************/
 
 Middleware.setMiddleware("logger");
+Middleware.setMiddleware("language");
+Middleware.setMiddleware("helper");
 
 /*************************************************************
  *
  * Run all global Middleware
  *
  * -------------------------
- * Do not this code        |
+ * Do not delete this code        |
  * -------------------------
  *
  *************************************************************/

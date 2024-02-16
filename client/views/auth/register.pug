@@ -1,0 +1,22 @@
+extends ../layouts/main.pug
+
+block styles 
+  link(rel="stylesheet" href=h.asset("bubble/bubbles.css"))
+  link(rel="stylesheet", href=h.asset("auth/register.css"))
+block script 
+  script(type="module", src=h.asset("bubble/bubbles.js")) 
+
+block body 
+  form()
+    .wrapper
+      img#logo(src=h.asset("icons/pawn_white_with_heart.webp"), alt="logo")
+      h1 #{translate.welcome}
+      p #{translate.register}
+    .wrapper 
+      .container 
+        label(for="username") #{translate.username}
+        input#username(placeholder=translate.username type="text" name="username" required minlength="3" maxlength="20")
+      .container 
+        label(for="password") #{translate.password}
+        input#password(placeholder=translate.password type="password" name="password" required minlength="6" maxlength="40") 
+      button(type="submit") #{translate.submit}

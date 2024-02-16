@@ -18,9 +18,7 @@ module.exports = {
   url:
     process.env.URL ||
     (() => {
-      throw new Error(
-        "URL : missing environment variable \n Put localhost or ipv4"
-      );
+      throw new Error("URL : missing environment variable \n Put localhost or ipv4");
     })(),
 
   /*************************************************************
@@ -45,5 +43,25 @@ module.exports = {
    *
    *************************************************************/
 
-  path_public_assets: "resources/assets",
+  dir_public_assets: "client/public",
+  path_public_assets: "/resources/assets",
+
+  /*************************************************************
+   *
+   * View engine
+   *
+   *************************************************************/
+
+  path_views: "client/views",
+  engine_views: "pug",
+  /** Express can already use this engine */
+  isAlreadyImplement: true,
+
+  /*************************************************************
+   *
+   * Language variable
+   *
+   *************************************************************/
+
+  default_language: "fr",
 };

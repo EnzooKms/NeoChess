@@ -1,9 +1,9 @@
 /*************************************************************
  *
- * Middleware Logger
+ * Middleware Helper
  *
  * -----------------------------------
- * Get Some information from req
+ * Implement Helper for client
  * -----------------------------------
  *
  *************************************************************/
@@ -11,10 +11,7 @@
 const Middleware = require("../middleware.js");
 
 module.exports = new Middleware().middleware((req, res, next) => {
-  const logger = new Console.Event("Logger Middleware -- New connexion");
-  logger.insertLine(`ip`, req.ip);
-  logger.insertLine("url", req.originalUrl);
-  logger.insertLine("auth", `${!!req.session?.user}`);
-  logger.run();
+  const helper = require("../../helper.js");
+  req.helper = helper;
   next();
 });

@@ -1,0 +1,37 @@
+#bubblesDiv {
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+  background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+}
+
+#bubblesDiv div {
+  height: 60px;
+  width: 60px;
+  border: 2px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50px;
+  position: absolute;
+  animation: animate 10s linear infinite;
+}
+
+#bubblesDiv div .dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 20%;
+  right: 20%;
+}
+
+@keyframes animate {
+  0% {
+    transform: scale(0) translateY(0) rotate(70deg);
+  }
+  100% {
+    transform: scale(2.3) translateY(-500px) rotate(360deg);
+  }
+}
