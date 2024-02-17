@@ -4,6 +4,11 @@ body {
   width: 100vw;
   height: 100vh;
   color: white;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.errors {
+  color: rgb(255, 50, 50);
+  font-weight: bold;
+  margin: 10px;
 }
