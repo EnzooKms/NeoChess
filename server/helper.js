@@ -7,7 +7,13 @@ function old(old, property) {
   return old[property] ?? "";
 }
 
+function error(errors, property) {
+  if (!errors) return false;
+  return errors[property];
+}
+
 module.exports = {
   asset,
   old,
+  error,
 };
