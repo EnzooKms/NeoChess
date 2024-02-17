@@ -14,8 +14,9 @@
 - [express-session](https://www.npmjs.com/package/express-session)
 - [pugjs](https://pugjs.org/api/getting-started.html)
 - [multer](https://www.npmjs.com/package/multer)
-- [sqlite3](https://www.npmjs.com/package/sqlite3)
+- [mysql2](https://www.npmjs.com/package/mysql2)
 - [socket.io](https://socket.io/)
+- [sequelize](https://sequelize.org/docs/v6/getting-started/)
 
 ## Installation
 
@@ -31,6 +32,7 @@ $   ./install.sh
 - sqlite3
 - gzip (compression)
 - chartJs
+- Sequelize (ORM)
 
 # Features
 
