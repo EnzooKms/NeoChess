@@ -64,4 +64,21 @@ module.exports = {
    *************************************************************/
 
   default_language: "fr",
+
+  /*************************************************************
+   *
+   * Session
+   *
+   *************************************************************/
+
+  SESSION_NAME:
+    process.env.SESSION_NAME ||
+    (() => {
+      throw new Error(".env SESSION_NAME not found");
+    })(),
+  SESSION_SECRET:
+    process.env.SESSION_SECRET ||
+    (() => {
+      throw new Error('=".env SESSION_SECRET not found');
+    })(),
 };
