@@ -16,9 +16,11 @@ block body
       .container 
         label(for="username") #{translate.username}
         input#username(value=h.old(old, "username") placeholder=translate.username type="text" name="username" required minlength="3" maxlength="20")
-        if h.error(errors, "error")
-          strong.errors #{errors.msgError}
+        each error in errors.username
+          strong.errors #{error}
       .container 
         label(for="password") #{translate.password}
         input#password(value=h.old(old, "password") placeholder=translate.password type="password" name="password" required minlength="6" maxlength="40") 
+        each error in errors.password
+          strong.errors #{error}
       button(type="submit") #{translate.submit}
