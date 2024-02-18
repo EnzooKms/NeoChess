@@ -15,18 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     {
       username: {
         type: DataTypes.STRING,
-        validate: {
-          min: 3,
-          max: 20,
-        },
       },
       password: {
         type: DataTypes.STRING,
-        validate: {
-          min: 6,
-          max: 40,
-          isAlphanumeric: true,
-        },
       },
     },
     {
