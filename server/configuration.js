@@ -47,3 +47,21 @@ app.use(compression());
 const express = require("express");
 app.use(config.path_public_assets, express.static(config.dir_public_assets));
 app.use(express.urlencoded({ extended: true }));
+
+/*************************************************************
+ *
+ * Application Session Configuration
+ *
+ *************************************************************/
+
+const session = require("express-session");
+app.use(
+  session({
+    name: config.SESSION_NAME,
+    secret: config.SESSION_SECRET,
+    saveUninitialized: false,
+    cookie: {
+      maxAge: 1 * 60 * 60 * 1000,
+    },
+  })
+);

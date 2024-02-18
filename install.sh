@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # install node package
-npm i bcrypt colors compressions cors dotenv express express-session pug helmet multer sqlite3 socket.io
+npm i bcrypt colors compressions cors dotenv express express-session pug helmet multer socket.io mysql2 sequelize sequelize-cli
 
 # clear console
 clear

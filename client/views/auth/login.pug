@@ -7,16 +7,18 @@ block script
   script(type="module", src=h.asset("bubble/bubbles.js")) 
 
 block body 
-  form()
+  form(action="/" + langName + "/login" method="post")
     .wrapper
       img#logo(src=h.asset("icons/pawn_white_with_heart.webp"), alt="logo")
       h1 #{translate.welcome}
-      p #{translate.register}
+      p #{translate.login}
     .wrapper 
+      if h.error(errors, "msgError")
+        strong.errors #{errors.msgError}
       .container 
         label(for="username") #{translate.username}
-        input#username(placeholder=translate.username type="text" name="username" required minlength="3" maxlength="20")
+        input#username(value=h.old(old, "username") placeholder=translate.username type="text" name="username" required minlength="3" maxlength="20")
       .container 
         label(for="password") #{translate.password}
-        input#password(placeholder=translate.password type="password" name="password" required minlength="6" maxlength="40") 
+        input#password(value=h.old(old, "password") placeholder=translate.password type="password" name="password" required minlength="6" maxlength="40") 
       button(type="submit") #{translate.submit}
