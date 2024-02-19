@@ -29,7 +29,7 @@ class Middleware {
    */
   setMiddleware(path) {
     const handler = require(`./middleware/${path}.js`);
-    this.Middleware.push(handler);
+    this.Middleware.push(handler()[1]);
   }
 
   /*************************************************************
