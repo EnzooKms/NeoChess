@@ -1,1 +1,25 @@
 extends ./layouts/main.pug
+
+block styles
+    link(rel="stylesheet", href=h.asset("home.css"))
+
+block body
+    header 
+        nav.secondary
+            a(href="/").logo.nav-el
+                img(src=h.asset("icons/pawn_white_with_heart.webp"), alt="logo")
+                h1.h-nav NeoChess
+            ul 
+                li 
+                    a(href="")
+                        img(src=h.asset("icons/queen_white.webp"), alt="queen_white")
+                        p.text-nav #{translate.play} 
+                li 
+                    a(href="")
+                        img(src=h.asset("icons/social.webp"), alt="social")
+                        p.text-nav #{translate.social}
+                li
+                    a(href="")
+                        img(src=h.asset("icons/lang.webp"), alt="lang")
+                        p.text-nav #{translate.langue}
+
