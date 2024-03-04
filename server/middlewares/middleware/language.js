@@ -11,7 +11,7 @@
 const Middleware = require("../middleware.js");
 
 module.exports = new Middleware().middleware((req, res, next) => {
-  function load(name) {
+  function load(name, redirectPath) {
     const translate = require(`../../langue/${name}.js`);
     const language = req.params.language;
     let result;
@@ -23,7 +23,7 @@ module.exports = new Middleware().middleware((req, res, next) => {
     }
 
     if (!result) {
-      res.redirect(`/${config.default_language}/${name}`);
+      res.redirect(`/${config.default_language}/${redirectPath}`);
     }
 
     return result;
