@@ -17,11 +17,17 @@ const get = route.route("/:language?/register", (req, res) => {
 
   const defaultSession = { username: [], password: [] };
   if (!req.session.errors) req.session.errors = defaultSession;
-  const translate = req.load("auth/register");
+  const translate = req.load("auth/register", "register");
   const langName = req.params.language || config.default_language;
 
   if (translate) {
-    res.render("auth/register", { translate, langName, h: req.helper, old: req.session.old, errors: req.session.errors });
+    res.render("auth/register", {
+      translate,
+      langName,
+      h: req.helper,
+      old: req.session.old,
+      errors: req.session.errors,
+    });
   }
 });
 
@@ -46,14 +52,16 @@ const post = route.route("/:language?/register", async (req, res) => {
 
   req.session.errors = {};
   req.session.old = { username, password };
-  const errorUsername = new validator(username, "username", { isAlphanumeric: true, min: 3, max: 20 }).validate(
-    req.session,
-    langName
-  );
-  const errorPassword = new validator(password, "password", { isAlphanumeric: true, min: 6, max: 40 }).validate(
-    req.session,
-    langName
-  );
+  const errorUsername = new validator(username, "username", {
+    isAlphanumeric: true,
+    min: 3,
+    max: 20,
+  }).validate(req.session, langName);
+  const errorPassword = new validator(password, "password", {
+    isAlphanumeric: true,
+    min: 6,
+    max: 40,
+  }).validate(req.session, langName);
   if (errorUsername || errorPassword) {
     res.redirect(`/${langName}/register`);
     return;
@@ -65,7 +73,10 @@ const post = route.route("/:language?/register", async (req, res) => {
    *
    *************************************************************/
 
-  const [user, created] = await User.findOrCreate({ where: { username }, defaults: { username, password } });
+  const [user, created] = await User.findOrCreate({
+    where: { username },
+    defaults: { username, password },
+  });
 
   if (created) {
     res.redirect(`/${langName}/login`);

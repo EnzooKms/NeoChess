@@ -8,11 +8,17 @@ const Route = require("../../route.js");
 const route = new Route();
 
 const get = route.route("/:language?/login", (req, res) => {
-  const translate = req.load("auth/login");
+  const translate = req.load("auth/login", "login");
   const langName = req.params.language;
 
   if (translate) {
-    res.render("auth/login", { translate, langName, h: req.helper, old: req.session.old, errors: req.session.errors });
+    res.render("auth/login", {
+      translate,
+      langName,
+      h: req.helper,
+      old: req.session.old,
+      errors: req.session.errors,
+    });
   }
 });
 
