@@ -38,6 +38,7 @@ const post = route.route("/:lanuage?/login", async (req, res) => {
     console.log(user.dataValues);
     req.session.user = {
       username: user.dataValues.username,
+      id: user.dataValues.id,
       createdAt: user.dataValues.createdAt,
     };
     res.redirect("/");
