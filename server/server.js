@@ -34,12 +34,22 @@ const options = {
   cert: fs.readFileSync("ssl/cert.pem"),
 };
 
-https.createServer(options, app).listen(config.port, config.url, () => {
-  /*************************************************************
-   *
-   * Clear console
-   *
-   *************************************************************/
+const server = https
+  .createServer(options, app)
+  .listen(config.port, config.url, () => {
+    /*************************************************************
+     *
+     * Clear console
+     *
+     *************************************************************/
 
-  Console.load();
-});
+    Console.load();
+  });
+
+/*************************************************************
+ *
+ * Socket runner
+ *
+ *************************************************************/
+const runner = require("./service/socket.io/server.js");
+runner(server);
