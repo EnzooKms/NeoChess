@@ -1,0 +1,17 @@
+extends ../layouts/main.pug
+
+block styles
+    link(rel="stylesheet", href=h.asset("variable.css"))
+    link(rel="stylesheet", href=h.asset("chess/game.css"))
+
+block script
+    script(type="module", src="/socket.io/socket.io.js")
+    script(type="module", src=h.asset("chess/resize.js")) 
+    script(type="module", src=h.asset("services/socket.io/game.js")) 
+
+block body
+    cg-container
+        input(type="hidden", name="data" data-game=gameData)
+        cg-board 
+        
+
