@@ -1,0 +1,63 @@
+body {
+  background-color: var(--secondary);
+  display: grid;
+  place-items: center;
+}
+
+cg-container {
+  display: block;
+  /* background-color: white; */
+}
+
+cg-board {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+cg-board * {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12.5%;
+  height: 12.5%;
+  border: none;
+  outline: none 0 transparent;
+}
+
+.blackBoard {
+  transform: rotateZ(180deg);
+}
+
+.blackBoard * {
+  transform: rotateZ(180deg);
+}
+
+square.move-dest {
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(rgba(20, 85, 30, 0.5) 19%, rgba(0, 0, 0, 0) 20%);
+  z-index: 1;
+}
+
+piece.w {
+  background-color: white;
+}
+
+piece.b {
+  background-color: black;
+}
+
+piece img {
+  width: 100%;
+  height: 100%;
+}
+
+piece img:not([src]) {
+  display: none;
+}
+
+.selected {
+  background-color: lightblue;
+}
